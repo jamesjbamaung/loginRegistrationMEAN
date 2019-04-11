@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- tip to easily see objects printed in full instead of [object Object] -->
+    <%- JSON.stringify(messages) %>
+    <!-- based on the structure of your messages, determine how to display them -->
+    <% if(messages.registration) { %>
+    <% for (var x of messages.registration) { %>
+    <h3><%= x %></h3>
+    <% } %>
+    <% } %>
+    <h1>Login or Register</h1>
+    <form method='post' action='/sessions'>
+        <label for='email'>Email:</label>
+        <input type='text' name='email'>
+        <label for='password'>Password:</label>
+        <input type='password' name='password'>
+        <input type='submit' value='Login'>
+    </form>
+    <form method='post' action='/users'>
+        <label for='firstName'>First Name:</label>
+        <input type='text' name='firstName'>
+        <label for='lastName'>Last Name:</label>
+        <input type='text' name='lastName'>
+        <label for='birthday'>Birthday:</label>
+        <input type='date' name='birthday'>
+        <label for='email'>Email:</label>
+        <input type='email' name='email'>
+        <label for='password'>Password:</label>
+        <input type='password' name='password'>
+        <input type='submit' value='Register'>
+    </form>
+</body>
+
+</html>
